@@ -396,6 +396,36 @@ Q11. Criar e armazenar uma matriz a 10x10 e gerar e imprimir a matriz invertida
 */
   //Entendo que por criar uma matriz, somos livres para escolher o modo, eu escolhi criar via valores gerados aleatoriamente através do recurso do próprio C, o rand().
   
+  int i, j, matriz[10][10], invertida[10][10];
+  
+  srand(time(NULL));
+  
+  printf("Gerando a matriz...\n");
+  printf("\nA =\n");
+  for(i=0; i<10; i++)
+  {
+    for(j=0; j<10; matriz[i][j]=rand()%100, printf("\t%d", matriz[i][j]), j++);
+    printf("\n");
+  }
+
+  printf("\nInvertida(A) =\n");
+  for(i=0; i<10; i++)
+  {  
+    for(j=0; j<10; invertida[i][j]=matriz[9-i][9-j], printf("\t%d", invertida[i][j]), j++);
+    printf("\n");
+  }
+  return 0;
+}
+
+
+int questaoExtra()
+{
+/* 
+QExtra. Criar e armazenar uma matriz a 10x10 e gerar e imprimir a matriz transposta
+*/
+  //No primeiro momento, entendi que por invertida se quis dizer transposta, já que a inversa é extremamente complexa para se fazer. Então respondi fazendo o algoritmo da transposta. Mais tarde, descobri este conceito da matriz invertida que segue acima.
+  //Entendo que por criar uma matriz, somos livres para escolher o modo, eu escolhi criar via valores gerados aleatoriamente através do recurso do próprio C, o rand().
+  
   int i, j, matriz[10][10], transposta[10][10];
   
   srand(time(NULL));
@@ -408,15 +438,15 @@ Q11. Criar e armazenar uma matriz a 10x10 e gerar e imprimir a matriz invertida
     printf("\n");
   }
 
-  printf("\nTransposta=\n");
+  printf("\nTransposta(A) =\n");
   for(i=0; i<10; i++)
   {  
     for(j=0; j<10; transposta[i][j]=matriz[j][i], printf("\t%d", transposta[i][j]), j++);
     printf("\n");
   }
-
   return 0;
 }
+
 
 int main(void)
 {
