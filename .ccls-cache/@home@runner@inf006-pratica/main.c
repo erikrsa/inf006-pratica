@@ -447,9 +447,64 @@ QExtra. Criar e armazenar uma matriz a 10x10 e gerar e imprimir a matriz transpo
   return 0;
 }
 
-
-int main(void)
+int buscabinaria()
 {
-  questao11();
+/*
+Exemplo da aula teórica
+*/
+
+    int array[15], i, j, auxiliar;
+    
+    srand(time(NULL));
+    
+    printf("Vetor desarrumado =");
+    for(i=0; i<15; array[i]=rand()%30, printf(" %d", array[i]), i++);
+    
+    //Buble sort
+    for(i=1; i<15; i++)
+    {
+        for(j=0; j<15-i; j++)
+        {
+            if(array[j]>array[j+1])
+            {
+                auxiliar=array[j];
+                array[j]=array[j+1];
+                array[j+1]=auxiliar;
+            }
+        }
+    }
+    
+    printf("\n\nVetor arrumado =");
+    for(i=0; i<15; printf(" %d", array[i]), i++);
+
+  //==== BUSCA BINÁRIA COMEÇA AQUI ====
+
+  int valor, fim = 15, inicio = 0, meio;
+
+  valor = rand()%30;
+
+  if(array[inicio]==valor)
+    return valor;
+  if(array[fim]==valor)
+    return valor;
+  
+  while(inicio<fim)
+  {
+    meio = (inicio+fim+1)/2;
+
+    if(array[meio]>valor)
+      fim = meio;
+    else if(array[meio]<valor)
+      inicio = meio;
+    else
+      return meio;
+  }
+    
+    return -1;
+}
+
+int main()
+{
+  buscabinaria();
   return 0;
 }
