@@ -19,22 +19,65 @@
 
 main()
 {
-  int data=0, mes, dia;
+  int entrada=0, mes, dia, data;
 
   printf("Desenhando o mapa astral\n");
 
-  while(data!=9999){
+  while(entrada!=9999){
     printf("Informe a data <formato ddmm> ou digite 9999 para sair: ");
-    scanf("%d", &data);
+    scanf("%d", &entrada);
 
-    if(data!=9999)
+    if(entrada!=9999)
     {
-      dia=data%100;
-      mes=data/100;
-      printf("mes=%d\ndia=%d\n", mes, dia);
-    }
+      mes=entrada%100;
+      dia=entrada/100;
 
-    printf("Seu numero: %d\n", data);
+      data=mes*100+dia;
+      
+      printf("mes=%d\ndia=%d\ndata=%d\n\n", mes, dia, data);
+
+      if((data<=120 && data>=101) || (data>=2212 && data<=3112))
+        printf("Seu signo eh de capricorno!");
+        
+      else if(data<=219)
+        printf("Seu signo eh de aquario!");
+
+      else if(data<=320)
+        printf("Seu signo eh de peixes!");
+
+      else if(data<=420)
+        printf("Seu signo eh de aries!");
+
+      else if(data<=520)
+        printf("Seu signo eh de touro!");
+
+      else if(data<=620)
+        printf("Seu signo eh de gemeos!");
+
+      else if(data<=721)
+        printf("Seu signo eh de cancer!");
+
+      else if(data<=822)
+        printf("Seu signo eh de leao!");
+
+      else if(data<=922)
+        printf("Seu signo eh de virgem!");
+
+      else if(data<=1022)
+        printf("Seu signo eh de libra!");
+
+      else if(data<=1121)
+        printf("Seu signo eh de escorpiao!");
+
+      else if(data<=1221)
+        printf("Seu signo eh de sargitario!");
+
+      else
+        printf("Signo nao identificado. Favor, consultar o astrologo!\n\n");
+    }
+    printf("\n\n");
   }
+
+  printf("Encerrando o programa...\n");
   
 }
