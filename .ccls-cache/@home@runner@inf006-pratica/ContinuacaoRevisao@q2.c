@@ -5,7 +5,6 @@ Q2. Que dado dois vetores de 10 posições, efetue operações basicas aritmetic
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <math.h>
 
 int i;
 float a[10], b[10], resultado[10];
